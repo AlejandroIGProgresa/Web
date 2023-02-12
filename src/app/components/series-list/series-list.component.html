@@ -1,18 +1,28 @@
 <div class="album py-5 bg-dark">
   <div class="container">
     <div class="row">
-      <div class="col-md-4" *ngFor="let i of [1,1,1,1,1,1,1,1,1]">
+      <div class="col-md-4" *ngFor="let serie of itemList">
         <div class="card mt-5 mb-5 box-shadow">
-          <img class="card-img-top" src="assets/shrek-avatar.png">
+          <img class="card-img-top" src="{{serie.imagenes[0]}}">
+          <div class="card-title pt-2 ps-2">
+            <h5 class="card-text">{{serie.nombre}}</h5>
+          </div>
+          <div class="card-subtitle ps-2 text-muted">
+            <h6 class="card-text">{{serie.categorias}}</h6>
+          </div>
           <div class="card-body">
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text">{{serie.sinopsis}}</p>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
                 <button type="button" class="btn btn-sm btn-outline-dark">Editar</button>
                 <button type="button" class="btn btn-sm btn-outline-dark">Ver</button>
                 <button type="button" class="btn btn-sm btn-outline-dark">Borrar</button>
               </div>
-              <small class="text-muted">2021</small>
+              <div class="pe-2">
+                <small class="row text-muted">Emitida en {{serie.emision}}</small>
+                <small class="row text-muted">Capítulos: {{serie.num_capitulos}}</small>
+                <small class="row text-muted">Puntuación: {{serie.puntuacion.toPrecision(3)}}/10</small>
+              </div>
             </div>
           </div>
         </div>

@@ -9,6 +9,8 @@ import { SeriesEditComponent } from './components/series-edit/series-edit.compon
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SeriesAddComponent } from './components/series-add/series-add.component';
 import { SeriesViewComponent } from './components/series-view/series-view.component';
+import {HttpClientModule} from "@angular/common/http";
+import {NgImageSliderModule} from "ng-image-slider";
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { SeriesViewComponent } from './components/series-view/series-view.compon
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule,
+    NgImageSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]
